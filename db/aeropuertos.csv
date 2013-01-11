@@ -1,0 +1,224 @@
+TXL;Tegel;8;Alemania;1;Berlin;1
+THF;Tempelhof;6;Alemania;1;Berlin;1
+SXF;Schonefeld;19;Alemania;1;Berlin;1
+CGN;Colonia;19;Alemania;1;Colonia;2
+DUS;Dusseldorf;9;Alemania;1;Dusseldorf;3
+FRA;Frankfurt Int.;9;Alemania;1;Frankfurt;4
+HAM;Fuhlsbuettel;13;Alemania;1;Hamburgo;5
+MUC;Franz Strauss;37;Alemania;1;Munich;6
+STR;Echterdingen;13;Alemania;1;Stuttgart;7
+LAD;4 de Fevereiro;3;Angola;2;Luanda;8
+CUR;Apto. Hato;12;Antillas Hol.;4;Curacao;9
+ANU;V. C. Bird Int.;6,4;Antigua;3;Antigua;10
+ALG;Houari-Boumedienne;20;Argelia;5;Argel;11
+BUE;Ezeiza;38;Argentina;6;Buenos Aires;12
+AUA;Reina Beatrix;3,5;Aruba;7;Aruba;13
+MEL;Tullamarine;11;Australia;8;Melbourne;14
+SYD;Kingsford Smith;10;Australia;8;Sydney;15
+GRZ;Thalerhof;12;Austria;9;Graz;16
+VIE;Viena Int.;13;Austria;9;Viena;17
+NAS;International;19;Bahamas;10;Nassau;18
+PID;Paradise Island;11;Bahamas;10;Nassau;18
+BGI;G. Adams Int.;16;Barbados;11;Barbados;19
+BRU;National;13;Belgica;12;Bruselas;20
+CBB;Wilsterman;3;Bolivia;13;Cochabamba;21
+LPB;El Alto;14;Bolivia;13;La Paz;22
+VVI;Viru Viru Int.;16;Bolivia;13;Sta. Cruz de la Sierra;23
+SJJ;Butmir;10;Bosnia;14;Sarajevo;24
+BEL;Val de Cans;12;Brasil;15;Belem;25
+CNF;Tancredo Neves;45;Brasil;15;Belo Horizonte;26
+PLU;Pampulha;9;Brasil;15;Belo Horizonte;26
+BSB;International;11;Brasil;15;Brasilia;27
+CPQ;International;18;Brasil;15;Campinas;28
+CWB;Alfonso Pena;20;Brasil;15;Curitiba;29
+FLN;Hercilio Luz;14;Brasil;15;Florianopolis;30
+FOR;Pinto Martins;6;Brasil;15;Fortaleza;31
+IGU;Cataratas;12;Brasil;15;Foz de Iguazu;32
+IOS;Eduardo Gomes;3;Brasil;15;Ilheus;33
+MCZ;Palmares;25;Brasil;15;Maceio;34
+MAO;Eduardo Gomes Int.;18;Brasil;15;Manaos;35
+POA;Salgado Filho;8;Brasil;15;Porto Alegre;36
+PVH;Belmonte;7;Brasil;15;Porto Velho;37
+REC;Guararapes Int.;11;Brasil;15;Recife;38
+GIG;International;21;Brasil;15;Rio de Janeiro;39
+SDU;Santos Dumont;1,6;Brasil;15;Rio de Janeiro;39
+SSA;Luis E. Magalhaes;36;Brasil;15;Salvador;40
+SLZ;Mal Cunha Macha;13;Brasil;15;Sao Luiz;41
+CGH;Congonhas;14;Brasil;15;Sao Paulo;42
+GRU;Guarulhos;14;Brasil;15;Sao Paulo;42
+VCP;Viracopos;97;Brasil;15;Sao Paulo;42
+TBT;International;3;Brasil;15;Tabatinga;43
+SOF;Vrazhdebna;10;Bulgaria;16;Sofia;44
+YUL;Dorval;25;Canada;17;Montreal;45
+YMX;Mirabel Int.;53;Canada;17;Montreal;45
+YOW;International;18;Canada;17;Ottawa;46
+YYZ;Pearson Int.;28;Canada;17;Toronto;47
+YKZ;Buttonville;30;Canada;17;Toronto;47
+YVR;International;15;Canada;17;Vancouver;48
+SVO;Sheremetyevo;29;CEI;18;Moscu;49
+DME;Domodedovo;40;CEI;18;Moscu;49
+VKO;Vnukovo;29;CEI;18;Moscu;49
+ANF;Cerro Moreno;21;Chile;19;Antofagasta;50
+ARI;Chacalluta;19;Chile;19;Arica;51
+IQQ;Diego Aracena;42;Chile;19;Iquique;52
+PMC;Tepual;0;Chile;19;Puerto Montt;53
+PUQ;Presidente Ibanez;20;Chile;19;Punta Arenas;54
+SCL;A. M. Benitez;21;Chile;19;Santiago de Chile;55
+BJS;Beijing;25;China;20;Beijing;56
+SHA;Hongqiao;12;China;20;Shanghai;57
+BAQ;E. Cortissoz;10;Colombia;21;Barranquilla;58
+BOG;El Dorado;12;Colombia;21;Bogota;59
+CLO;A. Bonilla Aragon;19;Colombia;21;Cali;60
+CTG;Rafael Nunez Int.;8;Colombia;21;Cartagena;61
+MDE;Jose Maria Cordova;36;Colombia;21;Medellin;62
+BZV;Maya Maya;4;Congo;22;Brazzaville;63
+SEL;Incheon Internacional;50,2;Corea;23;Seul;64
+SJO;Juan Santamaria Int.;18;Costa Rica;24;San Jose;65
+HAV;Jose Marti Int.;18;Cuba;25;Habana;66
+VRA;Juan Gualberto Gomez;0;Cuba;25;Varadero;67
+CPH;Copenhague;8;Dinamarca;26;Copenhague;68
+GYE;Simon Bolivar;5;Ecuador;27;Guayaquil;69
+UIO;Mariscal Sucre;8;Ecuador;27;Quito;70
+CAI;International;29;Egipto;28;El Cairo;71
+SAL;Comalapa Int.;62;El Salvador;29;San Salvador;72
+GLA;Glasgow;14;Escocia;30;Glasgow;73
+PIK;Prestwick;51;Escocia;30;Glasgow;73
+BTS;Ivanka;12;Eslovaquia;31;Bratislava;74
+LJU;Brnik;24;Eslovenia;32;Ljulbjand;75
+ALI;El Altet;12;Espana;33;Alicante;76
+BCN;El Prat;10;Espana;33;Barcelona;77
+BIO;Sondica;9;Espana;33;Bilbao;78
+IBZ;Ibiza;8;Espana;33;Ibiza;79
+ACE;Lanzarote;6;Espana;33;Lanzarote;80
+LPA;Gando;22;Espana;33;Las Palmas;81
+MAD;Barajas;16;Espana;33;Madrid;82
+AGP;Pablo Picasso;8;Espana;33;Malaga;83
+PMI;Son San Juan;9;Espana;33;Palma de Mallorca;84
+SCQ;La Bacolla;10;Espana;33;Stgo. de Compostela;85
+TFN;Los Rodeos;13;Espana;33;Tenerife;86
+TFS;Reina Sofia;57;Espana;33;Tenerife;86
+VLC;Manises;10;Espana;33;Valencia;87
+VGO;Peinador;8;Espana;33;Vigo;88
+MNL;Ninoy Aquino Int.;12;Filipinas;34;Manila;89
+HEL;Helsinki-Vantaa;18;Finlandia;35;Helsinki;90
+LYS;Satolas;26;Francia;36;Lyon;91
+CDG;Charles de Gaulle;26;Francia;36;Paris;92
+ORY;Orly;14;Francia;36;Paris;92
+ATH;Eleftherios Venizelos;14;Grecia;37;Atenas;93
+PTP;Le Raizet;3,2;Guadalupe;38;Pointe a Pitre;94
+GUA;La Aurora;6;Guatemala;39;Guatemala;95
+CAY;Rochambeau;15;Guyana Fr.;40;Cayenne;96
+GEO;Cheddi Jagan;40;Guyana;41;Georgetown;97
+PAP;International;13;Haiti;42;Port;98
+HNL;International;10;Hawaii;43;Honolulu;99
+AMS;Schiphol Int.;14;Holanda;44;Amsterdam;100
+RTM;Rotterdam;8;Holanda;44;Rotterdam;101
+TGU;Toncontin;5;Honduras;45;Tegucigalpa;102
+HKG;International;7;Hong Kong;46;Hong Kong;103
+BUD;Ferihegy;19;Hungria;47;Budapest;104
+CCU;Netaji Subhas;16;India;48;Calcuta;105
+DEL;Indira Gandhi Int.;20;India;48;Nueva Delhi;106
+BOM;Bombay;22;India;48;Mumbay;107
+CGK;Soekarno-Hatta Int.;19,5;Indonesia;49;Jakarta;108
+HLP;Halim Perdana Kusama;13;Indonesia;49;Jakarta;108
+BFS;Belfast Int.;21;Inglaterra;50;Belfast;109
+BHD;Belfast City;3,2;Inglaterra;50;Belfast;109
+LHR;Heathrow;24;Inglaterra;50;Londres;110
+LGW;Gatwick;46;Inglaterra;50;Londres;110
+STN;Stansted;5,5;Inglaterra;50;Londres;110
+LTN;Luton Int.;51;Inglaterra;50;Londres;110
+LCY;London City Airport;10;Inglaterra;50;Londres;110
+THR;Mehrabad;5;Iran;51;Teheran;111
+SNN;Shannon;26;Irlanda;52;Shannon;112
+TLV;Ben Gurion;14;Israel;53;Tel Aviv;113
+BRI;Palese;12;Italia;54;Bari;114
+GOA;C. Colombo;6;Italia;54;Genova;115
+LIN;Linate;8;Italia;54;Milan;116
+MXP;Malpensa;46;Italia;54;Milan;116
+NAP;Napoles Int.;6;Italia;54;Napoles;117
+FCO;Fiumicino;26;Italia;54;Roma;118
+KIN;Norman Manley;17;Jamaica;55;Kingston;119
+KTP;Tinson;3;Jamaica;55;Kingston;119
+NGO;Komaki;18;Japon;56;Nagoya;120
+KIX;Kansai Int.;55;Japon;56;Osaka;121
+HND;Haneda;19;Japon;56;Tokio;122
+NRT;Narita;65;Japon;56;Tokio;122
+NBO;Kenyatta;13;Kenya;57;Nairobi;123
+WIL;Wilson;3,2;Kenya;57;Nairobi;123
+BEY;International;16;Libano;58;Beirut;124
+KUL;International;22;Malasia;59;Kuala Lumpur;125
+MLA;Luqa;5;Malta;60;Malta;126
+CMN;Mohammed V;30;Marruecos;61;Casablanca;127
+RBA;Sale;10;Marruecos;61;Rabat;128
+ACA;Int. Gral. Juan Alvarez;26;Mexico;62;Acapulco;129
+CUN;Cancun;25;Mexico;62;Cancun;130
+MID;Manuel Rejon;8;Mexico;62;Merida;131
+MEX;Benito Juarez;13;Mexico;62;Mexico;132
+RGN;Yangon Int.;16;Myanmar;63;Yangon;133
+MGA;Int. Augusto Sandino;11;Nicaragua;64;Managua;134
+L0S;Murtala Muhammed;22;Nigeria;65;Lagos;135
+BGO;Flesland;19;Noruega;66;Bergen;136
+FBU;Fornebu;8;Noruega;66;Oslo;137
+GEN;Gardermoen;45;Noruega;66;Oslo;137
+AKL;International;22;Nva. Zelanda;67;Auckland;138
+KHI;Quaid - E - Azam;12;Pakistan;68;Karachi;139
+PTY;Tocumen Intl.;27;Panama;69;Panama;140
+ASU;Silvio Pettirossi;16;Paraguay;70;Asuncion;141
+IQT;Fco. Secada;1,6;Peru;71;Iquitos;142
+LIM;Jorge Chavez Int.;16;Peru;71;Lima;143
+PIU;Piura;4;Peru;71;Piura;144
+PPT;Faaa;6,4;Polinesia Fr.;72;Papete;145
+WAW;Okecie;10;Polonia;73;Varsovia;146
+LIS;Lisboa;7;Portugal;74;Lisboa;147
+OPO;Porto;11;Portugal;74;Oporto;148
+SJU;L. Munoz Marin Int.;15;Puerto Rico;75;San Juan;149
+SIG;Isla Grande;8;Puerto Rico;75;San Juan;149
+PRG;Ruzyne;16;Rep. Checa;76;Praga;150
+SDQ;Las Americas;30;Rep. Dominicana;77;Sto. Domingo;151
+BBU;Baneasa;9;Rumania;78;Bucarest;152
+OTP;Otopeni;16;Rumania;78;Bucarest;152
+DKR;Yoff;16;Senegal;79;Dakar;153
+SIN;Changi;20;Singapur;80;Singapur;154
+CPT;Capetown Int.;22;Sudafrica;81;Ciudad del Cabo;155
+JNB;Johannesburg Int.;24;Sudafrica;81;Johannesburgo;156
+ARN;Arlanda;21;Suecia;82;Estocolmo;157
+BMA;Bromma;8;Suecia;82;Estocolmo;157
+BSL;Basel;8;Suiza;83;Basilea;158
+GVA;Geneva/Cointrin;5;Suiza;83;Ginebra;159
+ZRH;Zurich;13;Suiza;83;Zurich;160
+PMB;Zanderij;45;Surinam;84;Paramaribo;161
+TPE;Chiang Kai Shek Int.;45;Taiwan;85;Taipei;162
+BKK;International;30;Tailandia;86;Bangkok;163
+POS;Piarco;25,5;Trinidad;87;Puerto Espana;164
+IST;Ataturk;24;Turquia;88;Estambul;165
+KBP;Borispol;38;Ucrania;89;Kiev;166
+IEV;Zhulhany;3;Ucrania;89;Kiev;166
+MVD;Carrasco;19;Uruguay;90;Montevideo;167
+MCO;International;16;USA;91;Orlando;168
+ATL;Hartsfield Int.;16;USA;91;Atlanta;169
+BWI;Baltimore-Wash Int.;16;USA;91;Baltimore;170
+BOS;Logan Int.;6;USA;91;Boston;171
+ORD;O'Hare-International;27;USA;91;Chicago;172
+MDW;Midway;13;USA;91;Chicago;172
+CGX;Meigs Field;1,6;USA;91;Chicago;172
+DFW;Dallas/Ft.Worth Int.;29;USA;91;Dallas;173
+HOU;Hobby;16;USA;91;Houston;174
+IAH;George Bush;32;USA;91;Houston;174
+LAX;International;24;USA;91;Los Angeles;175
+MEM;International;16;USA;91;Memphis;176
+MIA;International;11;USA;91;Miami;177
+MSY;International;21;USA;91;Nueva Orleans;178
+JFK;J. F. Kennedy Int.;22;USA;91;Nueva York;179
+LGA;La Guardia;13;USA;91;Nueva York;179
+EWR;Newark Int.;26;USA;91;Nueva York;179
+PDX;International;16;USA;91;Portland;180
+SFO;International;25;USA;91;San Francisco;181
+OAK;Metropolitan Oakland;16;USA;91;San Francisco;181
+SEA;Seattle-Tacoma Int.;32;USA;91;Seattle;182
+IAD;Dulles Int.;43;USA;91;Washington;183
+DCA;Reagan Int.;7;USA;91;Washington;183
+BWI;Baltimore/Washington Int.;52;USA;91;Washington;183
+CCS;Simon Bolivar;22;Venezuela;92;Caracas;184
+MAR;La Chinita;17;Venezuela;92;Maracaibo;185
+PMV;Del Caribe;15;Venezuela;92;Porlamar;186
+BEG;Belgrade;18;Yugoslavia;93;Belgrado;187

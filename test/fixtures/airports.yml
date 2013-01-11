@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  key: MyString
+  name: MyString
+  city_id: 1
+  km_to_city: 1
+
+two:
+  key: MyString
+  name: MyString
+  city_id: 1
+  km_to_city: 1
