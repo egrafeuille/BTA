@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  city_from: 
+  city_to: 
+  departure: 2013-01-16 20:12:54
+  arrival: 2013-01-16 20:12:54
+  active: MyString
+  priority: 1
+
+two:
+  city_from: 
+  city_to: 
+  departure: 2013-01-16 20:12:54
+  arrival: 2013-01-16 20:12:54
+  active: MyString
+  priority: 1

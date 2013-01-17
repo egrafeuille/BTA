@@ -1,0 +1,41 @@
+<%= form_for(@search) do |f| %>
+  <% if @search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+      <ul>
+      <% @search.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :city_from %><br />
+    <%= f.collection_select :city_from_id, City.all, :id, :name, :include_blank => "Please select" %>
+  </div>
+  <div class="field">
+    <%= f.label :city_to %><br />
+    <%= f.collection_select :city_to_id, City.all, :id, :name, :include_blank => "Please select" %>    
+  </div>
+  <div class="field">
+    <%= f.label :departure %><br />
+    <%= f.date_select :departure %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival %><br />
+    <%= f.date_select :arrival %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br />
+    <%= f.number_field :priority %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

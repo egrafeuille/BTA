@@ -1,4 +1,11 @@
 BTA::Application.routes.draw do
+
+  resources :searches do
+       member do
+         get 'execute'
+       end
+  end
+
   resources :airports
 
 

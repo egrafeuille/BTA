@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110182305) do
+ActiveRecord::Schema.define(:version => 20130116231254) do
 
   create_table "airlines", :force => true do |t|
     t.string   "name"
@@ -41,5 +41,19 @@ ActiveRecord::Schema.define(:version => 20130110182305) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "searches", :force => true do |t|
+    t.integer  "city_from_id"
+    t.integer  "city_to_id"
+    t.datetime "departure"
+    t.datetime "arrival"
+    t.string   "active"
+    t.integer  "priority"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "searches", ["city_from_id"], :name => "index_searches_on_city_from_id"
+  add_index "searches", ["city_to_id"], :name => "index_searches_on_city_to_id"
 
 end
