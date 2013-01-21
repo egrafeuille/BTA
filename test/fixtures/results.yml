@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  search_id: 1
+  source_id: 1
+  airport_from_id: 1
+  airport_to_id: 1
+  departure: 2013-01-18 20:21:12
+  arrival: 2013-01-18 20:21:12
+  airline_id: 1
+  stops: 1
+  currency: MyString
+  price: 9.99
+  traveltime: 2013-01-18 20:21:12
+
+two:
+  search_id: 1
+  source_id: 1
+  airport_from_id: 1
+  airport_to_id: 1
+  departure: 2013-01-18 20:21:12
+  arrival: 2013-01-18 20:21:12
+  airline_id: 1
+  stops: 1
+  currency: MyString
+  price: 9.99
+  traveltime: 2013-01-18 20:21:12

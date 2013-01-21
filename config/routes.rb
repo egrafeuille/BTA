@@ -1,5 +1,11 @@
 BTA::Application.routes.draw do
 
+  resources :results
+
+
+  resources :sources
+
+
   resources :searches do
        member do
          get 'execute'

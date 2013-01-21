@@ -100,11 +100,9 @@ class SearchesController < ApplicationController
     end
   end
   
-
-  def search_in_travelocity_source (id)
+  def search_with_watir (id)
     require 'watir-webdriver'
-    require 'nokogiri'
-  
+
     search = Search.find(id)
     from = City.find(search.city_from)
     to   = City.find(search.city_to)
@@ -112,35 +110,94 @@ class SearchesController < ApplicationController
     
     b = Watir::Browser.new :chrome
     b.goto url
-    b.text_field(:id => 'air_fromdate').set search.departure.strftime("%d/%m/%Y")
-    b.text_field(:id => 'air_todate').set   search.arrival.strftime("%d/%m/%Y")
     b.text_field(:id => 'air_from').set     from.name
     b.text_field(:id => 'air_to').set       to.name
-
-    b.button(:name => 'submitFO').click
-    
+    b.text_field(:id => 'air_fromdate').set search.departure.strftime("%d/%m/%Y")
+    b.text_field(:id => 'air_todate').set   search.arrival.strftime("%d/%m/%Y")
+    b.button(:name => 'submitFO').click    
     Watir::Wait.until { b.title.include? 'Search Results' }
-    
-    page = Nokogiri::HTML(b.html)
+	return b.html
+  end
+
+  def mock_search_with_watir
+    f = File.open('doc/travelocity.ar.result.html')
+    page = Nokogiri::HTML(f)
+    f.close
+	return page
+  end
+  
+  def analyze_page (page)
+	require 'nokogiri'
+    map_page = Nokogiri::HTML(page)
       
-    rows = page.css('table#tfGrid tr')
+    rows = map_page.css('table#tfGrid tr')
     details = rows.collect do |row|
       detail = {}
       [
         [:airline,    'th/div/span/text()'],
         [:departure,  'td[2]/text()'],
+		[:airport_from,  'td[2]/div[1]/span/text()'],
         [:arrival,    'td[3]/text()'],
+		[:airport_to,  'td[3]/div[1]/span/text()'],		
         [:traveltime, 'td[4]/text()'],
         [:price,      'td[5]/text()'],
       ].each do |name, xpath|
-        detail[name] =   row.at_xpath(xpath).to_s.strip.gsub("&nbsp;", "")
+        detail[name] =   row.at_xpath(xpath).to_s.strip.gsub("&nbsp;", "").gsub(/[()]/, "")
       end
       detail
-    end  
-    #puts details.inspect
-    #puts "End"
+    end 
+	details.shift
+	return details
   end
-
+  
+  def save_results (details)
+  
+	details.each do |detail|
+	  # puts "Airline:" + detail[:airline] 
+	  airline = Airline.find_by_name(detail[:airline])
+	  if !airline then
+	    airline = Airline.create!(:name => details[:airline])
+		puts "Airline: " + airline.name + " created." 
+	  end
+	  # puts "From:" + detail[:airport_from] 	  
+	  airport_from = Airport.find_by_key(detail[:airport_from])
+	  if !airport_from then 
+	    airport_from = Airport.create! (:key => detail[:airport_from])
+	    puts "Airport: " + airport_from.key + " created." 
+	  end
+	  # puts "To:" + detail[:airport_to] 	  
+	  airport_to = Airport.find_by_key(detail[:airport_to])	  
+	  if !airport_to then 
+	    airport_to = Airport.create! (:key => detail[:airport_to])
+	    puts "Airport: " + airport_to.key + " created." 
+	  end
+	  # puts detail[:price]
+	  curr, price = detail[:price].chomp.split(" ")
+	  Result.create!(:airline_id => airline.id, 
+					:airport_from_id => airport_from.id, 
+					:airport_to_id => airport_to.id, 
+					:departure => detail[:departure], 
+					:arrival => detail[:arrival], 
+					:currency => curr, 
+					:price => price, 
+					:search_id => search.id, 
+					:source_id => 1, 
+					:stops =>  1, 
+					:traveltime => detail[:traveltime]
+					)
+	end
+  end
+  
+  def search_in_travelocity_source (id)
+    
+	# result_page = search_with_watir (id)
+	result_page = mock_search_with_watir
+	
+	result_array = analyze_page (result_page)
+	
+	save_results (result_array)
+	
+  end
   
   
 end

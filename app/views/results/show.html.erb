@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Search:</b>
+  <%= @result.search_id %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @result.source_id %>
+</p>
+
+<p>
+  <b>Airport from:</b>
+  <%= @result.airport_from_id %>
+</p>
+
+<p>
+  <b>Airport to:</b>
+  <%= @result.airport_to_id %>
+</p>
+
+<p>
+  <b>Departure:</b>
+  <%= @result.departure %>
+</p>
+
+<p>
+  <b>Arrival:</b>
+  <%= @result.arrival %>
+</p>
+
+<p>
+  <b>Airline:</b>
+  <%= @result.airline_id %>
+</p>
+
+<p>
+  <b>Stops:</b>
+  <%= @result.stops %>
+</p>
+
+<p>
+  <b>Currency:</b>
+  <%= @result.currency %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @result.price %>
+</p>
+
+<p>
+  <b>Traveltime:</b>
+  <%= @result.traveltime %>
+</p>
+
+
+<%= link_to 'Edit', edit_result_path(@result) %> |
+<%= link_to 'Back', results_path %>

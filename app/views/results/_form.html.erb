@@ -1,0 +1,61 @@
+<%= form_for(@result) do |f| %>
+  <% if @result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@result.errors.count, "error") %> prohibited this result from being saved:</h2>
+
+      <ul>
+      <% @result.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :search_id %><br />
+    <%= f.number_field :search_id %>
+  </div>
+  <div class="field">
+    <%= f.label :source_id %><br />
+    <%= f.number_field :source_id %>
+  </div>
+  <div class="field">
+    <%= f.label :airport_from_id %><br />
+    <%= f.number_field :airport_from_id %>
+  </div>
+  <div class="field">
+    <%= f.label :airport_to_id %><br />
+    <%= f.number_field :airport_to_id %>
+  </div>
+  <div class="field">
+    <%= f.label :departure %><br />
+    <%= f.datetime_select :departure %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival %><br />
+    <%= f.datetime_select :arrival %>
+  </div>
+  <div class="field">
+    <%= f.label :airline_id %><br />
+    <%= f.number_field :airline_id %>
+  </div>
+  <div class="field">
+    <%= f.label :stops %><br />
+    <%= f.number_field :stops %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br />
+    <%= f.text_field :currency %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :traveltime %><br />
+    <%= f.time_select :traveltime %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
