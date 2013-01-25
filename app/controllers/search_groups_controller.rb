@@ -80,4 +80,25 @@ class SearchGroupsController < ApplicationController
       format.json { head :no_content }
     end
   end
+	
+	  # GET /search_groups/1/execute
+  def execute
+		search_qty = 0
+		result_qty = 0
+    @search_group = SearchGroup.find(params[:id])
+		@search_group.searches.each do |search|
+			result_qty += search.execute
+			search_qty += 1
+		end
+    
+   respond_to do |format|
+     if search_qty
+       format.html { redirect_to @search_group, notice: 'Group Search:'+ @search_group.name + ': ' + search_qty.to_s + ' searches were successfully executed.' }
+       format.json { head :no_content }
+     else
+       format.html { render action: "show" }
+       format.json { render json: @search_group.errors, status: :unprocessable_entity }
+     end
+   end
+  end
 end

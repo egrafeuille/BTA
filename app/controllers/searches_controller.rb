@@ -86,17 +86,17 @@ class SearchesController < ApplicationController
   
   # GET /searches/1/execute
   def execute
-    search_in_travelocity_source(params[:id])
+		qty = search_in_travelocity_source(params[:id])
     
-#    respond_to do |format|
-#      if @search.search_in_travelocity_source(params[:search])
-#        format.html { redirect_to @search, notice: 'Search was successfully executed.' }
-#        format.json { head :no_content }
-#      else
-#        format.html { render action: "show" }
-#        format.json { render json: @search.errors, status: :unprocessable_entity }
-#      end
-#    end
+		respond_to do |format|
+			if qty
+				format.html { redirect_to searches_url, notice: 'Search was successfully executed.' }
+				format.json { head :no_content }
+			else
+				format.html { render action: "show" }
+				format.json { render json: @search.errors, status: :unprocessable_entity }
+			end
+		end
   end
 
   def search_in_travelocity_source (id)
@@ -109,7 +109,7 @@ class SearchesController < ApplicationController
 	
 		# result_array = analyze_result(result_page)
 		# results_qty = save_results(id, result_array)
-	
+		return summaries_qty
   end
   
   

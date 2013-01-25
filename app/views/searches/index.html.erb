@@ -8,6 +8,7 @@
     <th>Return</th>
     <th>Active</th>
     <th>Priority</th>
+		<th>Search Group</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,8 +22,10 @@
     <td><%= search.return %></td>
     <td><%= search.active %></td>
     <td><%= search.priority %></td>
+		<td><%= search.search_group_id %></td>
     <td><%= link_to 'Show', search %></td>
     <td><%= link_to 'Edit', edit_search_path(search) %></td>
+		<td><%= link_to 'Execute', execute_search_path(search) %></td>
     <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

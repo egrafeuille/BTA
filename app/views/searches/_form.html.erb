@@ -35,6 +35,10 @@
     <%= f.label :priority %><br />
     <%= f.number_field :priority %>
   </div>
+	<div class="field">
+    <%= f.label :search_group %><br />
+		<%= f.collection_select :search_group_id, SearchGroup.all, :id, :name, :include_blank => "Please select" %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

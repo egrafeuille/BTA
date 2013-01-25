@@ -1,7 +1,10 @@
 BTA::Application.routes.draw do
 
-  resources :search_groups
-
+  resources :search_groups do
+       member do
+         get 'execute'
+       end
+	end
 
   resources :summaries
 

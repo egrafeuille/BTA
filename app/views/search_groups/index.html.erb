@@ -13,6 +13,7 @@
     <td><%= search_group.name %></td>
     <td><%= link_to 'Show', search_group %></td>
     <td><%= link_to 'Edit', edit_search_group_path(search_group) %></td>
+		<td><%= link_to 'Execute', execute_search_group_path(search_group) %></td>
     <td><%= link_to 'Destroy', search_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
