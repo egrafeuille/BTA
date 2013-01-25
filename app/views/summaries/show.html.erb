@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Source:</b>
+  <%= @summary.source_id %>
+</p>
+
+<p>
+  <b>Search:</b>
+  <%= @summary.search_id %>
+</p>
+
+<p>
+  <b>Airline:</b>
+  <%= @summary.airline_id %>
+</p>
+
+<p>
+  <b>Stops:</b>
+  <%= @summary.stops %>
+</p>
+
+<p>
+  <b>Currency:</b>
+  <%= @summary.currency %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @summary.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_summary_path(@summary) %> |
+<%= link_to 'Back', summaries_path %>

@@ -1,0 +1,23 @@
+<h1>Listing search_groups</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @search_groups.each do |search_group| %>
+  <tr>
+    <td><%= search_group.name %></td>
+    <td><%= link_to 'Show', search_group %></td>
+    <td><%= link_to 'Edit', edit_search_group_path(search_group) %></td>
+    <td><%= link_to 'Destroy', search_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Search group', new_search_group_path %>

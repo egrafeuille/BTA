@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  source_id: 1
+  search_id: 1
+  city_from_id: 1
+  city_to_id: 1
+  airline_id: 1
+  stops: 1
+  currency: MyString
+  price: 9.99
+
+two:
+  source_id: 1
+  search_id: 1
+  city_from_id: 1
+  city_to_id: 1
+  airline_id: 1
+  stops: 1
+  currency: MyString
+  price: 9.99

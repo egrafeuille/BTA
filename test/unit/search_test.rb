@@ -9,11 +9,11 @@ class SearchTest < ActiveSupport::TestCase
     bsas = City.new(:name => "Buenos Aires")
     rio  = City.new(:name => "Rio de Janeiro")
     dep  = Date.today
-    arr  = dep + 3
+    ret  = dep + 3
     search = Search.new(:city_from_id => bsas.id,
                         :city_to_id => rio.id,
                         :departure => dep,
-                        :arrival =>  arr,
+                        :return =>  ret,
                         :active => "Y",
                         :priority => 1
                           )

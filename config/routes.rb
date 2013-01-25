@@ -1,5 +1,11 @@
 BTA::Application.routes.draw do
 
+  resources :search_groups
+
+
+  resources :summaries
+
+
   resources :results
 
 

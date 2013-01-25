@@ -1,0 +1,41 @@
+<%= form_for(@summary) do |f| %>
+  <% if @summary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@summary.errors.count, "error") %> prohibited this summary from being saved:</h2>
+
+      <ul>
+      <% @summary.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :source_id %><br />
+    <%= f.number_field :source_id %>
+  </div>
+  <div class="field">
+    <%= f.label :search_id %><br />
+    <%= f.number_field :search_id %>
+  </div>
+  <div class="field">
+    <%= f.label :airline_id %><br />
+    <%= f.number_field :airline_id %>
+  </div>
+  <div class="field">
+    <%= f.label :stops %><br />
+    <%= f.number_field :stops %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br />
+    <%= f.text_field :currency %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

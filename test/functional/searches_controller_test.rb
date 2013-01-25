@@ -18,7 +18,7 @@ class SearchesControllerTest < ActionController::TestCase
 
   test "should create search" do
     assert_difference('Search.count') do
-      post :create, search: { active: @search.active, arrival: @search.arrival, departure: @search.departure, priority: @search.priority }
+      post :create, search: { active: @search.active, return: @search.return, departure: @search.departure, priority: @search.priority }
     end
 
     assert_redirected_to search_path(assigns(:search))
@@ -35,7 +35,7 @@ class SearchesControllerTest < ActionController::TestCase
   end
 
   test "should update search" do
-    put :update, id: @search, search: { active: @search.active, arrival: @search.arrival, departure: @search.departure, priority: @search.priority }
+    put :update, id: @search, search: { active: @search.active, return: @search.return, departure: @search.departure, priority: @search.priority }
     assert_redirected_to search_path(assigns(:search))
   end
 
