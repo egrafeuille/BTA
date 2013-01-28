@@ -1,0 +1,1 @@
+Summary.delete_all

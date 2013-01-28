@@ -18,8 +18,8 @@
   <tr>
     <td><%= search.city_from_id %></td>
     <td><%= search.city_to_id %></td>
-    <td><%= search.departure %></td>
-    <td><%= search.return %></td>
+    <td><%= nice_date_form(search.departure) %></td>
+    <td><%= nice_date_form(search.return) %></td>
     <td><%= search.active %></td>
     <td><%= search.priority %></td>
 		<td><%= search.search_group_id %></td>
