@@ -1,10 +1,10 @@
-<%= form_for(@search) do |f| %>
-  <% if @search.errors.any? %>
+<%= form_for(@generic_search) do |f| %>
+  <% if @generic_search.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+      <h2><%= pluralize(@generic_search.errors.count, "error") %> prohibited this search from being saved:</h2>
 
       <ul>
-      <% @search.errors.full_messages.each do |msg| %>
+      <% @generic_search.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -20,16 +20,12 @@
     <%= f.collection_select :city_to_id, City.all, :id, :name, :include_blank => "Please select" %>    
   </div>
   <div class="field">
-    <%= f.label :departure %><br />
-    <%= f.date_select :departure %>
+    <%= f.label :when %> (Format: Minute Hour Day-of-month Month-of-year Day-of-week)<br />
+    <%= f.text_field :when %>
   </div>
   <div class="field">
-    <%= f.label :return %><br />
-    <%= f.date_select :return %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br />
-    <%= f.check_box :active %>
+    <%= f.label :is_active %><br />
+    <%= f.check_box :is_active %>
   </div>
   <div class="field">
     <%= f.label :priority %><br />

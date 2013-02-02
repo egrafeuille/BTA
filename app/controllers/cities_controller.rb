@@ -2,7 +2,9 @@ class CitiesController < ApplicationController
   # GET /cities
   # GET /cities.json
   def index
-    @cities = City.all
+    # @cities = City.all
+		@cities = City.paginate :page=>params[:page], :order=>'name asc',
+			:per_page => 50
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,9 @@ class SummariesController < ApplicationController
   # GET /summaries
   # GET /summaries.json
   def index
-    @summaries = Summary.all
+    # @summaries = Summary.all
+		@summaries = Summary.paginate :page=>params[:page], :order=>'created_at desc',
+			:per_page => 50		
 
     respond_to do |format|
       format.html # index.html.erb

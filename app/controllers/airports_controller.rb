@@ -2,8 +2,10 @@ class AirportsController < ApplicationController
   # GET /airports
   # GET /airports.json
   def index
-    @airports = Airport.all
-
+    # @airports = Airport.all
+		@airports = Airport.paginate :page=>params[:page], :order=>'name asc',
+			:per_page => 50
+			
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @airports }

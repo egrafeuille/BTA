@@ -1,5 +1,8 @@
 BTA::Application.routes.draw do
 
+  resources :search_dates
+
+
   resources :search_groups do
        member do
          get 'execute'
@@ -15,7 +18,7 @@ BTA::Application.routes.draw do
   resources :sources
 
 
-  resources :searches do
+  resources :generic_searches do
        member do
          get 'execute'
        end

@@ -2,7 +2,9 @@ class ResultsController < ApplicationController
   # GET /results
   # GET /results.json
   def index
-    @results = Result.all
+    # @results = Result.all
+		@results = Result.paginate :page=>params[:page], :order=>'created_at desc',
+			:per_page => 50
 
     respond_to do |format|
       format.html # index.html.erb

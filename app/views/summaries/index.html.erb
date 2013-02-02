@@ -21,8 +21,8 @@
     <td><%= summary.airline_id %></td>
     <td><%= summary.stops %></td>
     <td><%= summary.currency %></td>
-    <td><%= summary.price %></td>
-		<td><%= nice_datetime_form(summary.created_at) %></td>
+    <td><%= number_to_currency(summary.price) %></td>
+	<td><%= nice_datetime_form(summary.created_at) %></td>
     <td><%= link_to 'Show', summary %></td>
     <td><%= link_to 'Edit', edit_summary_path(summary) %></td>
     <td><%= link_to 'Destroy', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,3 +33,4 @@
 <br />
 
 <%= link_to 'New Summary', new_summary_path %>
+<p><%= will_paginate @summaries %></p>

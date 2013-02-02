@@ -2,7 +2,10 @@ class SourcesController < ApplicationController
   # GET /sources
   # GET /sources.json
   def index
-    @sources = Source.all
+    # @sources = Source.all
+		@sources = Source.paginate :page=>params[:page], :order=>'name asc',
+			:per_page => 50
+		
 
     respond_to do |format|
       format.html # index.html.erb

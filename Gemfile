@@ -37,9 +37,25 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+# Several alternatives for crwal web pages
+# gem 'mechanize'
+# gem 'wombat'
+# gem 'sinew'
 
-gem 'mechanize'
-gem 'wombat'
-gem 'sinew'
+# Finally using Watir to crwal pages
 gem 'watir-webdriver'
+
+# Factastic css & xml parser
+gem 'nokogiri'
+
+# Fantastic Date parser
 gem 'chronic'
+
+# For Paginate
+gem 'will_paginate', '>= 3.0.pre'
+
+# Scheduler
+gem 'rufus-scheduler'
+
+# Google Charts
+gem 'googlecharts'

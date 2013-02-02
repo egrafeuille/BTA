@@ -1,0 +1,29 @@
+<%= form_for(@search_date) do |f| %>
+  <% if @search_date.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_date.errors.count, "error") %> prohibited this search_date from being saved:</h2>
+
+      <ul>
+      <% @search_date.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :departure %><br />
+    <%= f.datetime_select :departure %>
+  </div>
+  <div class="field">
+    <%= f.label :returndate %><br />
+    <%= f.datetime_select :returndate %>
+  </div>
+  <div class="field">
+    <%= f.label :is_active %><br />
+    <%= f.check_box :is_active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

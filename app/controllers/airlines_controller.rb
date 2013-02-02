@@ -2,7 +2,9 @@ class AirlinesController < ApplicationController
   # GET /airlines
   # GET /airlines.json
   def index
-    @airlines = Airline.all
+    # @airlines = Airline.all
+		@airlines = Airline.paginate :page=>params[:page], :order=>'name asc',
+			:per_page => 50
 
     respond_to do |format|
       format.html # index.html.erb

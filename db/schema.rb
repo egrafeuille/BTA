@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125020735) do
+ActiveRecord::Schema.define(:version => 20130202014734) do
 
   create_table "airlines", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,20 @@ ActiveRecord::Schema.define(:version => 20130125020735) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "generic_searches", :force => true do |t|
+    t.integer  "city_from_id"
+    t.integer  "city_to_id"
+    t.integer  "priority"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "search_group_id"
+    t.string   "when"
+    t.boolean  "is_active"
+  end
+
+  add_index "generic_searches", ["city_from_id"], :name => "index_searches_on_city_from_id"
+  add_index "generic_searches", ["city_to_id"], :name => "index_searches_on_city_to_id"
+
   create_table "results", :force => true do |t|
     t.integer  "search_id"
     t.integer  "source_id"
@@ -58,26 +72,19 @@ ActiveRecord::Schema.define(:version => 20130125020735) do
     t.datetime "updated_at",                                                      :null => false
   end
 
+  create_table "search_dates", :force => true do |t|
+    t.datetime "departure"
+    t.datetime "returndate"
+    t.boolean  "is_active"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "search_groups", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "searches", :force => true do |t|
-    t.integer  "city_from_id"
-    t.integer  "city_to_id"
-    t.datetime "departure"
-    t.datetime "return"
-    t.string   "active"
-    t.integer  "priority"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.integer  "search_group_id"
-  end
-
-  add_index "searches", ["city_from_id"], :name => "index_searches_on_city_from_id"
-  add_index "searches", ["city_to_id"], :name => "index_searches_on_city_to_id"
 
   create_table "sources", :force => true do |t|
     t.string   "name"
@@ -89,14 +96,13 @@ ActiveRecord::Schema.define(:version => 20130125020735) do
   create_table "summaries", :force => true do |t|
     t.integer  "source_id"
     t.integer  "search_id"
-    t.integer  "city_from_id"
-    t.integer  "city_to_id"
     t.integer  "airline_id"
     t.integer  "stops"
     t.string   "currency"
-    t.decimal  "price",        :precision => 8, :scale => 2
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.decimal  "price",          :precision => 8, :scale => 2
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.integer  "search_date_id"
   end
 
 end

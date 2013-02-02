@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Departure:</b>
+  <%= @search_date.departure %>
+</p>
+
+<p>
+  <b>Return:</b>
+  <%= @search_date.returndate %>
+</p>
+
+<p>
+  <b>Is active:</b>
+  <%= @search_date.is_active %>
+</p>
+
+
+<%= link_to 'Edit', edit_search_date_path(@search_date) %> |
+<%= link_to 'Back', search_dates_path %>

@@ -2,7 +2,9 @@ class SearchesController < ApplicationController
   # GET /searches
   # GET /searches.json
   def index
-    @searches = Search.all
+    # @searches = Search.all
+		@searches = Search.paginate :page=>params[:page], :order=>'created_at desc',
+			:per_page => 50
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,7 +48,7 @@ class SearchesController < ApplicationController
 
     respond_to do |format|
       if @search.save
-        format.html { redirect_to @search, notice: 'Search was successfully created.' }
+        format.html { redirect_to @search, notice: ' Search was successfully created.' }
         format.json { render json: @search, status: :created, location: @search }
       else
         format.html { render action: "new" }
@@ -62,7 +64,7 @@ class SearchesController < ApplicationController
 
     respond_to do |format|
       if @search.update_attributes(params[:search])
-        format.html { redirect_to @search, notice: 'Search was successfully updated.' }
+        format.html { redirect_to @search, notice: ' Search was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -84,21 +86,6 @@ class SearchesController < ApplicationController
     end
   end
   
-  # GET /searches/1/execute
-  def execute
-		@search = Search.find(params[:id])
-		qty = @search.search_in_travelocity_source
-    
-		respond_to do |format|
-			if (qty > 0)
-				format.html { redirect_to searches_url, notice: 'Search was successfully executed.' }
-				format.json { head :no_content }
-			else
-				format.html { render action: "show" }
-				format.json { render json: @search.errors, status: :unprocessable_entity }
-			end
-		end
-  end
 
   
 end

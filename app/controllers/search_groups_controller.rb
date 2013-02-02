@@ -2,7 +2,9 @@ class SearchGroupsController < ApplicationController
   # GET /search_groups
   # GET /search_groups.json
   def index
-    @search_groups = SearchGroup.all
+    # @search_groups = SearchGroup.all
+		@search_groups = SearchGroup.paginate :page=>params[:page], :order=>'created_at desc',
+			:per_page => 50
 
     respond_to do |format|
       format.html # index.html.erb
@@ -87,8 +89,12 @@ class SearchGroupsController < ApplicationController
 		result_qty = 0
     @search_group = SearchGroup.find(params[:id])
 		@search_group.searches.each do |search|
-			result_qty += search.execute
-			search_qty += 1
+			begin
+				result_qty += search.execute
+				search_qty += 1
+			rescue
+				puts "Error en el execute del search id:" + search.id
+			end
 		end
     
    respond_to do |format|

@@ -1,0 +1,35 @@
+<h1>Listing generic searches</h1>
+
+<table>
+  <tr>
+    <th>City from</th>
+    <th>City to</th>
+    <th>When</th>
+    <th>Is Active?</th>
+    <th>Priority</th>
+	<th>Search Group</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @generic_searches.each do |generic_search| %>
+  <tr>
+    <td><%= generic_search.city_from_id %></td>
+    <td><%= generic_search.city_to_id %></td>
+    <td><%= generic_search.when %></td>
+    <td><%= generic_search.is_active %></td>
+    <td><%= generic_search.priority %></td>
+	<td><%= generic_search.search_group_id %></td>
+    <td><%= link_to 'Show', generic_search %></td>
+    <td><%= link_to 'Edit', edit_generic_search_path(generic_search) %></td>
+	<td><%= link_to 'Execute', execute_generic_search_path(generic_search) %></td>
+    <td><%= link_to 'Destroy', generic_search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Search', new_generic_search_path %>
+<p><%= will_paginate @generic_searches %></p>
