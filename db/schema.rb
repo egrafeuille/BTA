@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202014734) do
+ActiveRecord::Schema.define(:version => 20130204203505) do
 
   create_table "airlines", :force => true do |t|
     t.string   "name"
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(:version => 20130202014734) do
   end
 
   create_table "search_dates", :force => true do |t|
-    t.datetime "departure"
-    t.datetime "returndate"
+    t.date     "departure"
+    t.date     "returndate"
     t.boolean  "is_active"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
