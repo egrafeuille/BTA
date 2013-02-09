@@ -12,39 +12,38 @@ class Search
   attr_accessor :id, :city_from_id, :city_to_id, :departure, :returndate
 
   def execute
-#    begin
       search_in_travelocity_source
-#    rescue
-#      puts "Error executing search: #{@city_from_id}, #{@city_to_id}, #{@departure}, #{@returndate} "
-#    end
   end
 
 
   def search_in_travelocity_source
 	result_page = search_with_watir
-	puts "step 1:done"
 	# result_page = mock_search_with_watir	
 	summaries_array = analyze_summary(result_page)
-	puts "step 2:done"
 	summaries_qty   = save_summaries(summaries_array)
-	puts "step 3:done"
 	return summaries_qty
   end
   
   
   def search_with_watir
-    b = Watir::Browser.new :chrome
-    url = "http://www.travelocity.com.ar/ar/vuelos"    
-    b.goto url
-    b.text_field(:id => 'air_from').set     City.find(self.city_from_id).name
-    b.text_field(:id => 'air_to').set       City.find(self.city_to_id).name
-    b.text_field(:id => 'air_fromdate').set self.departure.strftime("%d/%m/%Y")
-    b.text_field(:id => 'air_todate').set   self.returndate.strftime("%d/%m/%Y")
-    b.button(:name => 'submitFO').click    
-	timeout = 60
-    Watir::Wait.until(timeout) { b.title.include? 'Search Results' }
-	result_page = b.html
-	b.close
+    result_page = ""
+    begin
+      b = Watir::Browser.new :chrome
+      url = "http://www.travelocity.com.ar/ar/vuelos"    
+      b.goto url
+      b.text_field(:id => 'air_from').set     City.find(self.city_from_id).name
+      b.text_field(:id => 'air_to').set       City.find(self.city_to_id).name
+      b.text_field(:id => 'air_fromdate').set self.departure.strftime("%d/%m/%Y")
+      b.text_field(:id => 'air_todate').set   self.returndate.strftime("%d/%m/%Y")
+      b.button(:name => 'submitFO').click    
+      timeout = 60
+      Watir::Wait.until(timeout) { b.title.include? 'Search Results' }
+      result_page = b.html
+    rescue Exception => exc
+      Rails.logger.error("Error executing search: #{@city_from_id}, #{@city_to_id}, #{@departure}, #{@returndate}: #{exc.message}")
+    ensure
+      b.close
+    end
 	return result_page
   end
 
@@ -56,21 +55,21 @@ class Search
 
   
   def analyze_summary (page)
-		summary = []
-		map_page = Nokogiri::HTML(page)  
-		prices = map_page.css('td.tfNavGrid span.tfNavPrice') ## NonStop Prices
-		prices.each do |price| 
-			airline  = price.children[1].text
-			currency, value = price.children[2].text.split(" ")
-			summary << [airline, 0, currency, value]
-		end
-		prices = map_page.css('td.tfNavGridOn span.tfNavPrice') ## Stops Prices
-		prices.each do |price| 
-			airline  = price.children[1].text
-			currency, value = price.children[2].text.split(" ")
-			summary << [airline, 1, currency, value]
-		end
-		return summary
+	summary = []
+	map_page = Nokogiri::HTML(page)  
+	prices = map_page.css('td.tfNavGrid span.tfNavPrice') ## NonStop Prices
+	prices.each do |price| 
+		airline  = price.children[1].text
+		currency, value = price.children[2].text.split(" ")
+		summary << [airline, 0, currency, value]
+	end
+	prices = map_page.css('td.tfNavGridOn span.tfNavPrice') ## Stops Prices
+	prices.each do |price| 
+		airline  = price.children[1].text
+		currency, value = price.children[2].text.split(" ")
+		summary << [airline, 1, currency, value]
+	end
+	return summary
   end
 
 
@@ -79,9 +78,11 @@ class Search
 	details.each do |detail|
 	    # Airline
 	    airline = Airline.find_by_name(detail[0])
-	    if 	(airline) && (detail[3] != 1)
+	    search_date = SearchDate.find_by_departure_and_returndate(self.departure, self.returndate)
+	    if 	(airline) && (search_date) && (detail[3] != 1)
 			Summary.create!(:source_id => 1,
-							:search_id => self.id,
+							:generic_search_id => self.id,
+							:search_date_id => search_date.id,
 							:airline_id => airline.id,
 							:stops => detail[1],
 							:currency => detail[2],

@@ -33,9 +33,9 @@ class SearchDate < ActiveRecord::Base
   		  search_date.save
   	   end
     end
-    # Activar las busquedas (cada 4 días) para los siguientes 10 meses x 7 veces al mes (aprox) 
+    # Activar las busquedas (cada 4 días) para los siguientes 4 meses x 7 veces al mes (aprox) 
     base_date = Date.today + 30.days + 7.days
-    (10 * 7).times do |d|
+    (4 * 7).times do |d|
 	   departure_date = base_date + (d * 4).days
   	   # Volviendo en 1, 2 y 3 semanas
   	   3.times do |r|

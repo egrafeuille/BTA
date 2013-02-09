@@ -2,23 +2,24 @@
 
 <table>
   <tr>
-    <th>Source</th>
-    <th>Search</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Departure Date</th>
+    <th>Return Date</th>    
     <th>Airline</th>
     <th>Stops</th>
     <th>Currency</th>
     <th>Price</th>
-		<th>Created</th>
-    <th></th>
-    <th></th>
-    <th></th>
+	<th>Created</th>
   </tr>
 
 <% @summaries.each do |summary| %>
   <tr>
-    <td><%= summary.source_id %></td>
-    <td><%= summary.search_id %></td>
-    <td><%= summary.airline_id %></td>
+    <td><%= summary.generic_search.city_from.name %></td>
+    <td><%= summary.generic_search.city_to.name %></td>    
+    <td><%= nice_date_form(summary.search_date.departure) %></td>
+    <td><%= nice_date_form(summary.search_date.returndate) %></td>
+    <td><%= summary.airline.name %></td>
     <td><%= summary.stops %></td>
     <td><%= summary.currency %></td>
     <td><%= number_to_currency(summary.price) %></td>
@@ -32,5 +33,6 @@
 
 <br />
 
-<%= link_to 'New Summary', new_summary_path %>
 <p><%= will_paginate @summaries %></p>
+
+<%= link_to 'New Summary', new_summary_path %>

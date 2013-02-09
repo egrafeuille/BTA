@@ -27,6 +27,18 @@ class GenericSearch < ActiveRecord::Base
       search.execute
     end
   end
-    
+
+  def sum_qty
+    Summary.where(:generic_search_id => self.id).where("price > 1").count
+  end
+
+  def sum_max
+    Summary.where(:generic_search_id => self.id).where("price > 1").maximum(:price)
+  end
+  
+  def sum_min
+    Summary.where(:generic_search_id => self.id).where("price > 1").minimum(:price)
+  end
+
 
 end

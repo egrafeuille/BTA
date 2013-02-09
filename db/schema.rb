@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130204203505) do
+ActiveRecord::Schema.define(:version => 20130209163054) do
 
   create_table "airlines", :force => true do |t|
     t.string   "name"
@@ -95,13 +95,13 @@ ActiveRecord::Schema.define(:version => 20130204203505) do
 
   create_table "summaries", :force => true do |t|
     t.integer  "source_id"
-    t.integer  "search_id"
+    t.integer  "generic_search_id"
     t.integer  "airline_id"
     t.integer  "stops"
     t.string   "currency"
-    t.decimal  "price",          :precision => 8, :scale => 2
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.decimal  "price",             :precision => 8, :scale => 2
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
     t.integer  "search_date_id"
   end
 
