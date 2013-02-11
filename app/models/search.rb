@@ -61,12 +61,14 @@ class Search
 	prices.each do |price| 
 		airline  = price.children[1].text
 		currency, value = price.children[2].text.split(" ")
+		value = value.gsub(/\,/,"")
 		summary << [airline, 0, currency, value]
 	end
 	prices = map_page.css('td.tfNavGridOn span.tfNavPrice') ## Stops Prices
 	prices.each do |price| 
 		airline  = price.children[1].text
 		currency, value = price.children[2].text.split(" ")
+		value = value.gsub(/\,/,"")
 		summary << [airline, 1, currency, value]
 	end
 	return summary
