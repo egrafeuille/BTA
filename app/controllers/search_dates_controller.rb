@@ -2,6 +2,15 @@ class SearchDatesController < ApplicationController
   # GET /search_dates
   # GET /search_dates.json
   def index
+    @search_dates = SearchDate.all	
+    @date = params[:month] ? Date.parse(params[:month]) : Date.today
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @search_dates }
+    end
+  end
+
+  def index_two
     # @search_dates = SearchDate.all
 		@search_dates = SearchDate.paginate :page=>params[:page], :order=>'departure asc',
 			:per_page => 50

@@ -1,34 +1,36 @@
-<h3>Listing generic searches</h3>
+<h1>Listing Generic Searches</h3>
 
-<table>
-  <tr>
-    <th>City From</th>
-    <th>City To</th>
-    <th>Is Active?</th>
-    <th>Priority</th>
-	<th>Search Group</th>
-	<th>Qty</th>
-    <th>Max</th>
-    <th>Min</th>
-  </tr>
-
-<% @generic_searches.each do |generic_search| %>
-  <tr>
-    <td><%= generic_search.city_from.name %></td>
-    <td><%= generic_search.city_to.name %></td>
-    <td><%= generic_search.is_active %></td>
-    <td><%= generic_search.priority %></td>
-	<td><%= generic_search.search_group_id %></td>
-	<td><%= generic_search.sum_qty %></td>
-	<td><%= generic_search.sum_max %></td>
-	<td><%= generic_search.sum_min %></td>
-    <td><%= link_to 'Show', generic_search %></td>
-    <td><%= link_to 'Edit', edit_generic_search_path(generic_search) %></td>
-	<td><%= link_to 'Execute', execute_generic_search_path(generic_search) %></td>
-    <td><%= link_to 'Destroy', generic_search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div id="table">
+	<table>
+	  <tr>
+	    <th>City From</th>
+	    <th>City To</th>
+	    <th>Is Active?</th>
+	    <th>Priority</th>
+		<th>Search Group</th>
+		<th>Qty</th>
+	    <th>Max</th>
+	    <th>Min</th>
+	  </tr>
+	
+	<% @generic_searches.each do |generic_search| %>
+	  <tr>
+	    <td><%= generic_search.city_from.name %></td>
+	    <td><%= generic_search.city_to.name %></td>
+	    <td><%= generic_search.is_active %></td>
+	    <td><%= generic_search.priority %></td>
+		<td><%= generic_search.search_group_id %></td>
+		<td><%= generic_search.sum_qty %></td>
+		<td><%= generic_search.sum_max %></td>
+		<td><%= generic_search.sum_min %></td>
+	    <td><%= link_to 'Show', generic_search %></td>
+	    <td><%= link_to 'Edit', edit_generic_search_path(generic_search) %></td>
+		<td><%= link_to 'Execute', execute_generic_search_path(generic_search) %></td>
+	    <td><%= link_to 'Destroy', generic_search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
 
 <br />
 

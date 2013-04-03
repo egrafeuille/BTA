@@ -1,28 +1,30 @@
-<h1>Listing airports</h1>
+<h1>Listing Airports</h1>
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Name</th>
-    <th>City</th>
-    <th>Km to city</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @airports.each do |airport| %>
-  <tr>
-    <td><%= airport.key %></td>
-    <td><%= airport.name %></td>
-    <td><%= airport.city_id %></td>
-    <td><%= airport.km_to_city %></td>
-    <td><%= link_to 'Show', airport %></td>
-    <td><%= link_to 'Edit', edit_airport_path(airport) %></td>
-    <td><%= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div id="table">
+	<table>
+	  <tr>
+	    <th>Key</th>
+	    <th>Name</th>
+	    <th>City</th>
+	    <th>Km to city</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @airports.each do |airport| %>
+	  <tr>
+	    <td><%= airport.key %></td>
+	    <td><%= airport.name %></td>
+	    <td><%= airport.city_id %></td>
+	    <td><%= airport.km_to_city %></td>
+	    <td><%= link_to 'Show', airport %></td>
+	    <td><%= link_to 'Edit', edit_airport_path(airport) %></td>
+	    <td><%= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
 
 <br />
 

@@ -1,28 +1,21 @@
 <h1>Listing search_dates</h1>
 
-<table>
-  <tr>
-    <th>Departure</th>
-    <th>Return</th>
-    <th>Is active</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @search_dates.each do |search_date| %>
-  <tr>
-    <td><%= nice_date_form(search_date.departure) %></td>
-    <td><%= nice_date_form(search_date.returndate) %></td>
-    <td><%= search_date.is_active %></td>
-    <td><%= link_to 'Show', search_date %></td>
-    <td><%= link_to 'Edit', edit_search_date_path(search_date) %></td>
-    <td><%= link_to 'Destroy', search_date, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Search date', new_search_date_path %>
-<p><%= will_paginate @search_dates %></p>
+<div id="calendar">
+  <h2 id="month">
+    <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-01") %>
+    <%= h @date.strftime("%B %Y") %>
+    <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-01") %>
+  </h2>
+  <%= calendar_for @search_dates, :year => @date.year, :month => @date.month do |calendar| %>
+    <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') %>
+    <%= calendar.day(:day_method => :departure) do |date, search_dates| %>
+      <%= date.day %>
+      	<ul>
+      		<% for search_date in search_dates %>
+        		<li class="<%= "Active" if search_date.is_active %>"> 
+        			<%= link_to h(nice_date_form(search_date.returndate)), search_date %></li>
+      		<% end %>
+    	</ul>
+    <% end %>
+  <% end %>
+</div>

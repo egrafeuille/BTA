@@ -1,71 +1,60 @@
-// Place all the styles related to the Searches controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-#calendar table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#calendar td,
-#calendar th {
+#table td,
+#table th {
   font-family: "Lucida Grande",arial,helvetica,sans-serif;
   font-size: 10px;
   padding: 6px;
   border: 1px solid #999;
 }
 
-#calendar th {
+#table tr:nth-child(even) { /*(even) or (2n 0)*/
+	background: #A4D1FF;
+}
+#table tr:nth-child(odd) { /*(odd) or (2n 1)*/
+	background: #EAF4FF;
+}
+
+#table th {
   background: #DDD;
   color: #666;
   text-align: center;
   width: 14.2857142857143%;
 }
 
-#calendar td {
+#table td {
   background: #FFF;
   color: #777;
-  height: 80px;
   vertical-align: top;
-  font-size: 16px;
+  font-size: 10px;
 }
 
-#calendar .notmonth {
-  color: #CCC;
-}
-
-#calendar #month {
+#table #month {
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
 }
 
-#calendar #month a, #calendar #month a:hover {
+#table #month a, #table #month a:hover {
   text-decoration: none;
   padding: 0 10px;
   color: #999;
 }
 
-#calendar .today {
-  background-color: #D7F2FF;
-}
-
-#calendar ul {
+#table ul {
   margin: 0;
   margin-top: 5px;
   padding: 0;
   list-style: none;
 }
 
-#calendar li {
+#table li {
   margin: 0;
   padding: 0;
   font-size: 11px;
   text-align: center;
 }
 
-#calendar .Active {
+#table .Active {
   color: red;
   font-weight:bold;
   background-color:yellow;

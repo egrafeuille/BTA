@@ -1,24 +1,26 @@
-<h1>Listing sources</h1>
+<h1>Listing Sources</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Search url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @sources.each do |source| %>
-  <tr>
-    <td><%= source.name %></td>
-    <td><%= source.search_url %></td>
-    <td><%= link_to 'Show', source %></td>
-    <td><%= link_to 'Edit', edit_source_path(source) %></td>
-    <td><%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div id="table">
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>Search url</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @sources.each do |source| %>
+	  <tr>
+	    <td><%= source.name %></td>
+	    <td><%= source.search_url %></td>
+	    <td><%= link_to 'Show', source %></td>
+	    <td><%= link_to 'Edit', edit_source_path(source) %></td>
+	    <td><%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
 
 <br />
 

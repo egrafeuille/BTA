@@ -1,42 +1,44 @@
-<h1>Listing results</h1>
+<h1>Listing Results</h1>
 
-<table>
-  <tr>
-    <th>Search</th>
-    <th>Source</th>
-    <th>Airport from</th>
-    <th>Airport to</th>
-    <th>Departure</th>
-    <th>Arrival</th>
-    <th>Airline</th>
-    <th>Stops</th>
-    <th>Currency</th>
-    <th>Price</th>
-    <th>Traveltime</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @results.each do |result| %>
-  <tr>
-    <td><%= result.search_id %></td>
-    <td><%= result.source_id %></td>
-    <td><%= result.airport_from_id %></td>
-    <td><%= result.airport_to_id %></td>
-    <td><%= result.departure %></td>
-    <td><%= result.arrival %></td>
-    <td><%= result.airline_id %></td>
-    <td><%= result.stops %></td>
-    <td><%= result.currency %></td>
-    <td><%= result.price %></td>
-    <td><%= result.traveltime %></td>
-    <td><%= link_to 'Show', result %></td>
-    <td><%= link_to 'Edit', edit_result_path(result) %></td>
-    <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div id="table">
+	<table>
+	  <tr>
+	    <th>Search</th>
+	    <th>Source</th>
+	    <th>Airport from</th>
+	    <th>Airport to</th>
+	    <th>Departure</th>
+	    <th>Arrival</th>
+	    <th>Airline</th>
+	    <th>Stops</th>
+	    <th>Currency</th>
+	    <th>Price</th>
+	    <th>Traveltime</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @results.each do |result| %>
+	  <tr>
+	    <td><%= result.search_id %></td>
+	    <td><%= result.source_id %></td>
+	    <td><%= result.airport_from_id %></td>
+	    <td><%= result.airport_to_id %></td>
+	    <td><%= result.departure %></td>
+	    <td><%= result.arrival %></td>
+	    <td><%= result.airline_id %></td>
+	    <td><%= result.stops %></td>
+	    <td><%= result.currency %></td>
+	    <td><%= result.price %></td>
+	    <td><%= result.traveltime %></td>
+	    <td><%= link_to 'Show', result %></td>
+	    <td><%= link_to 'Edit', edit_result_path(result) %></td>
+	    <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
 
 <br />
 

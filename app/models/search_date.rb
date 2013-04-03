@@ -3,7 +3,6 @@ class SearchDate < ActiveRecord::Base
 
   has_many :summaries
 
-# validates :departure, :returndate, :presence => true
   validates :departure, :presence => true, :uniqueness => {:scope => :returndate}
   validates :returndate, :presence => true
 
@@ -12,7 +11,6 @@ class SearchDate < ActiveRecord::Base
     limit_date = Date.today + days
     where('departure < ?' , limit_date)
   end)
-
 
   def self.new_date
     # Desactivar las busquedas de la próxima semana

@@ -1,35 +1,37 @@
-<h1>Listing summaries</h1>
+<h1>Listing Summaries</h1>
 
-<table>
-  <tr>
-    <th>From</th>
-    <th>To</th>
-    <th>Departure Date</th>
-    <th>Return Date</th>    
-    <th>Airline</th>
-    <th>Stops</th>
-    <th>Currency</th>
-    <th>Price</th>
-	<th>Created</th>
-  </tr>
-
-<% @summaries.each do |summary| %>
-  <tr>
-    <td><%= summary.generic_search.city_from.name %></td>
-    <td><%= summary.generic_search.city_to.name %></td>    
-    <td><%= nice_date_form(summary.search_date.departure) %></td>
-    <td><%= nice_date_form(summary.search_date.returndate) %></td>
-    <td><%= summary.airline.name %></td>
-    <td><%= summary.stops %></td>
-    <td><%= summary.currency %></td>
-    <td><%= number_to_currency(summary.price) %></td>
-	<td><%= nice_datetime_form(summary.created_at) %></td>
-    <td><%= link_to 'Show', summary %></td>
-    <td><%= link_to 'Edit', edit_summary_path(summary) %></td>
-    <td><%= link_to 'Destroy', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div id="table">
+	<table>
+	  <tr>
+	    <th>From</th>
+	    <th>To</th>
+	    <th>Departure Date</th>
+	    <th>Return Date</th>    
+	    <th>Airline</th>
+	    <th>Stops</th>
+<!--	    <th>Currency</th>  -->
+	    <th>Price</th>
+		<th>Created</th>
+	  </tr>
+	
+	<% @summaries.each do |summary| %>
+	  <tr>
+	    <td><%= summary.generic_search.city_from.name %></td>
+	    <td><%= summary.generic_search.city_to.name %></td>    
+	    <td><%= nice_date_form(summary.search_date.departure) %></td>
+	    <td><%= nice_date_form(summary.search_date.returndate) %></td>
+	    <td><%= summary.airline.name %></td>
+	    <td><%= summary.stops %></td>
+<!--	    <td><%= summary.currency %></td>   -->
+	    <td><%= number_to_currency(summary.price) %></td>
+		<td><%= nice_datetime_form(summary.created_at) %></td>
+	    <td><%= link_to 'Show', summary %></td>
+	    <td><%= link_to 'Edit', edit_summary_path(summary) %></td>
+	    <td><%= link_to 'Destroy', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
 
 <br />
 
