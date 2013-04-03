@@ -1,6 +1,6 @@
 scheduler = Rufus::Scheduler.start_new
 
-scheduler.every "30m", :first_in => '5m', :tags => 'Priority 1' do
+scheduler.every "1h", :first_in => '5m', :tags => 'Priority 1' do
     GenericSearch.run_job(1)
 end
 

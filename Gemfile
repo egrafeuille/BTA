@@ -60,3 +60,6 @@ gem 'rufus-scheduler'
 
 # Google Charts
 gem 'googlecharts'
+
+# Table Builder; used to display a calendar
+gem "watu_table_builder", :require => "table_builder"
