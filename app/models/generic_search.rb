@@ -29,15 +29,15 @@ class GenericSearch < ActiveRecord::Base
   end
 
   def sum_qty
-    Summary.where(:generic_search_id => self.id).where("price > 1").count
+    Summary.where(:generic_search_id => self.id).count
   end
 
   def sum_max
-    Summary.where(:generic_search_id => self.id).where("price > 1").maximum(:price)
+    Summary.where(:generic_search_id => self.id).maximum(:price)
   end
   
   def sum_min
-    Summary.where(:generic_search_id => self.id).where("price > 1").minimum(:price)
+    Summary.where(:generic_search_id => self.id).minimum(:price)
   end
 
 
