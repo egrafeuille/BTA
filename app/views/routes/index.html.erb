@@ -1,0 +1,32 @@
+<h1>Listing Routes</h1>
+
+<div id="table">
+	<table>
+	  <tr>
+	    <th>City from</th>
+	    <th>City to</th>
+	    <th>Info priority</th>
+	    <th>Is active</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @routes.each do |route| %>
+	  <tr>
+	    <td><%= route.city_from.name %></td>
+	    <td><%= route.city_to.name %></td>
+	    <td><%= route.info_priority %></td>
+	    <td><%= route.is_active %></td>
+	    <td><%= link_to 'Show', route %></td>
+	    <td><%= link_to 'Edit', edit_route_path(route) %></td>
+	    <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
+
+<br />
+
+<%= link_to 'New Route', new_route_path %>
+

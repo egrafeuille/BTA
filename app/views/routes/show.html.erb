@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>City from:</b>
+  <%= @route.city_from.name %>
+</p>
+
+<p>
+  <b>City to:</b>
+  <%= @route.city_to.name %>
+</p>
+
+<p>
+  <b>Info priority:</b>
+  <%= @route.info_priority %>
+</p>
+
+<p>
+  <b>Is active:</b>
+  <%= @route.is_active %>
+</p>
+
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>

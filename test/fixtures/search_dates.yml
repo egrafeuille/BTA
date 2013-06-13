@@ -2,10 +2,10 @@
 
 one:
   departure: 2013-01-28 21:20:41
-  return: 2013-01-28 21:20:41
+  returndate: 2013-01-28 21:20:41
   is_active: false
 
 two:
   departure: 2013-01-28 21:20:41
-  return: 2013-01-28 21:20:41
+  returndate: 2013-01-28 21:20:41
   is_active: false

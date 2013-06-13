@@ -3,4 +3,5 @@ class City < ActiveRecord::Base
   belongs_to :country
   has_many :airports, :dependent => :restrict
   has_many :generic_searches, :dependent => :restrict
+  has_many :routes, :dependent => :restrict
 end

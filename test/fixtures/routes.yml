@@ -3,15 +3,17 @@
 one:
   city_from_id: 1
   city_to_id: 2
+  info_priority: 1
   is_active: true
-  priority: 1
-  when: MyString
-  search_group_id: 1
-  
+
 two:
   city_from_id: 1
-  city_to_id: 2
+  city_to_id: 3
+  info_priority: 2
+  is_active: true
+
+three:
+  city_from_id: 2
+  city_to_id: 3
+  info_priority: 1
   is_active: false
-  priority: 1
-  when: MyString  
-  search_group_id: 1

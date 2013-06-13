@@ -2,9 +2,7 @@
 
 one:
   source_id: 1
-  search_id: 1
-  city_from_id: 1
-  city_to_id: 1
+  generic_search_id: 1
   airline_id: 1
   stops: 1
   currency: MyString
@@ -12,9 +10,7 @@ one:
 
 two:
   source_id: 1
-  search_id: 1
-  city_from_id: 1
-  city_to_id: 1
+  generic_search_id: 1
   airline_id: 1
   stops: 1
   currency: MyString
