@@ -17,11 +17,11 @@ class Search
 
 
   def search_in_travelocity_source
-	result_page = search_with_watir
-	# result_page = mock_search_with_watir	
-	summaries_array = analyze_summary(result_page)
-	summaries_qty   = save_summaries(summaries_array)
-	return summaries_qty
+  	result_page = search_with_watir
+  	# result_page = mock_search_with_watir	
+  	summaries_array = analyze_summary(result_page)
+  	summaries_qty   = save_summaries(summaries_array)
+  	return summaries_qty
   end
   
   
@@ -44,56 +44,56 @@ class Search
     ensure
       b.close
     end
-	return result_page
+    return result_page
   end
 
   
   def mock_search_with_watir
-	page = open('doc/travelocity.ar.result.html', &:read)
-	return page
+  	page = open('doc/travelocity.ar.result.html', &:read)
+  	return page
   end
 
   
   def analyze_summary (page)
-	summary = []
-	map_page = Nokogiri::HTML(page)  
-	prices = map_page.css('td.tfNavGrid span.tfNavPrice') ## NonStop Prices
-	prices.each do |price| 
-		airline  = price.children[1].text
-		currency, value = price.children[2].text.split(" ")
-		value = value.gsub(/\,/,"")
-		summary << [airline, 0, currency, value]
-	end
-	prices = map_page.css('td.tfNavGridOn span.tfNavPrice') ## Stops Prices
-	prices.each do |price| 
-		airline  = price.children[1].text
-		currency, value = price.children[2].text.split(" ")
-		value = value.gsub(/\,/,"")
-		summary << [airline, 1, currency, value]
-	end
-	return summary
+  	summary = []
+  	map_page = Nokogiri::HTML(page)  
+  	prices = map_page.css('td.tfNavGrid span.tfNavPrice') ## NonStop Prices
+  	prices.each do |price| 
+  		airline  = price.children[1].text
+  		currency, value = price.children[2].text.split(" ")
+  		value = value.gsub(/\,/,"")
+  		summary << [airline, 0, currency, value]
+  	end
+  	prices = map_page.css('td.tfNavGridOn span.tfNavPrice') ## Stops Prices
+  	prices.each do |price| 
+  		airline  = price.children[1].text
+  		currency, value = price.children[2].text.split(" ")
+  		value = value.gsub(/\,/,"")
+  		summary << [airline, 1, currency, value]
+  	end
+  	return summary
   end
 
 
   def save_summaries (details)
     summary_qty = 0
-	details.each do |detail|
+    details.each do |detail|
 	    # Airline
 	    airline = Airline.find_by_name(detail[0])
 	    search_date = SearchDate.find_by_departure_and_returndate(self.departure, self.returndate)
 	    if 	(airline) && (search_date) && (detail[3] != 1)
-			Summary.create!(:source_id => 1,
-							:generic_search_id => self.id,
-							:search_date_id => search_date.id,
-							:airline_id => airline.id,
-							:stops => detail[1],
-							:currency => detail[2],
-							:price => detail[3]
-							)
-			summary_qty += 1
-		end
-	end
-	return summary_qty
+  			Summary.create!(:source_id => 1,
+  							:generic_search_id => self.id,
+  							:search_date_id => search_date.id,
+  							:airline_id => airline.id,
+  							:stops => detail[1],
+  							:currency => detail[2],
+  							:price => detail[3]
+  							)
+  			summary_qty += 1
+  		end
+  	end
+  	return summary_qty
   end
 
 	

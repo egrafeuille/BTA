@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612220407) do
+ActiveRecord::Schema.define(:version => 20130615233659) do
 
   create_table "airlines", :force => true do |t|
     t.string   "name"
@@ -57,19 +57,23 @@ ActiveRecord::Schema.define(:version => 20130612220407) do
   add_index "generic_searches", ["city_to_id"], :name => "index_searches_on_city_to_id"
 
   create_table "results", :force => true do |t|
-    t.integer  "search_id"
     t.integer  "source_id"
     t.integer  "airport_from_id"
     t.integer  "airport_to_id"
     t.datetime "departure"
-    t.datetime "arrival"
     t.integer  "airline_id"
     t.integer  "stops"
     t.string   "currency"
     t.decimal  "price",           :precision => 10, :scale => 2, :default => 0.0
     t.time     "traveltime"
-    t.datetime "created_at",                                                      :null => false
-    t.datetime "updated_at",                                                      :null => false
+    t.datetime "created_at",                                                       :null => false
+    t.datetime "updated_at",                                                       :null => false
+    t.integer  "route_id"
+    t.string   "result_type",                                    :default => "RT"
+    t.boolean  "is_roundtrip",                                   :default => true
+    t.string   "ticket_class",                                   :default => "EC"
+    t.datetime "result_date"
+    t.datetime "returndate"
   end
 
   create_table "routes", :force => true do |t|
